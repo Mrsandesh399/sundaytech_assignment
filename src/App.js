@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./RoutesFile/router";
+import DotLoader from "./Component/DotLoader/DotLoader";
+import { Suspense } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<DotLoader />}>
+      <RouterProvider router={router} />
+    </Suspense>
   );
 }
 
