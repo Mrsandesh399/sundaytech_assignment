@@ -23,7 +23,7 @@ const Register = () => {
   });
 
   const handleUserName = (event) => {
-    const { name, value } = event.target;
+    const { value } = event.target;
     setErrorUserData({ ...errorUserData, userName: validateUserName(value) });
   };
   const handleInputs = (event) => {
@@ -31,12 +31,12 @@ const Register = () => {
     setUserData({ ...userData, [name]: value });
   };
   const handleEmail = (event) => {
-    const { name, value } = event.target;
+    const { value } = event.target;
     setErrorUserData({ ...errorUserData, emailID: validateEmail(value) });
   };
 
   const handlePassword = (event) => {
-    const { name, value } = event.target;
+    const { value } = event.target;
     setErrorUserData({ ...errorUserData, password: validatePassword(value) });
   };
   const handleSubmit = (event) => {
@@ -67,10 +67,10 @@ const Register = () => {
   return (
     <div>
       <div className="login-main-div row ">
-        <div className={`col-lg-6 col-md-6 col-sm-12 col-xs-12 firstDiv`}>
+        <div className={` col-md-6  col-xs-12 firstDiv`}>
           <img src="picture/login_screen.png" className="loginImage" />
         </div>
-        <div className={`col-lg-6 col-md-6 col-sm-12 col-xs-12 secondDiv`}>
+        <div className={` col-md-6  col-xs-12 secondDiv`}>
           <div>
             <img src="picture/ShipcomLogo.jpg" className="logoImage" />
             <div>

@@ -16,12 +16,14 @@ const UserList = () => {
     setOpen();
   };
   return (
-    <div className="userlist-main-div">
-      <HeaderDiv />
-      <SearchFilter />
-      <TableComponent openSideBar={openSideBar} />
+    <>
+      <div className={`userlist-main-div ${open ?"hideScroll":""}`}>
+        <HeaderDiv />
+        <SearchFilter />
+        <TableComponent openSideBar={openSideBar} />
+      </div>
       {open ? <UserDetails data={open} handleClose={handleClose} /> : null}
-    </div>
+    </>
   );
 };
 
