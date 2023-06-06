@@ -1,0 +1,105 @@
+.userlist-main-div {
+  background-color: whitesmoke;
+  padding: 50px;
+  width: 100%;
+  min-height: 100vh;
+}
+.header-div {
+  display: flex;
+  justify-content: space-between;
+}
+.add-user-button {
+  padding: 10px;
+  border: 1px solid purple;
+  color: purple;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 5px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+}
+.header-subtext {
+  font-size: 20px;
+  color: gray;
+}
+.header-text {
+  color: gray;
+  font-size: 30px;
+}
+.search-main-div {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+  justify-content: start;
+  align-items: center;
+}
+.search-field-box {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  gap: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.search-field:focus {
+  border: none;
+}
+.search-field {
+  border: none;
+  width: 350px;
+  margin-left: 10px;
+}
+input:focus {
+  outline: none;
+}
+.filter-div {
+  display: flex;
+  gap: 10px;
+}
+.table-header-class {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.table-header-div {
+  display: grid;
+  grid-template-columns: 22.5% 22.5% 22.5% 22.5% 10%;
+  background-color: #d3d3d3;
+  padding: 20px;
+  border-radius: 10px;
+}
+.userData-list-div {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 22.5% 22.5% 22.5% 22.5% 10%;
+  background-color: #fff;
+  padding: 20px 0;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.user-image-logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 0 20px;
+  background-color: #d3d3d3;
+}
+.userData-center {
+  display: flex;
+  align-items: center;
+}
+.slot-box {
+  margin: 20px;
+  color: gray;
+  font-size: 16px;
+}
+.sideCOLOR {
+  position: absolute;
+  height: 100%;
+  width: 10px;
+}

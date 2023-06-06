@@ -9,8 +9,8 @@ import { useNavigate } from "react-router-dom";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 
 const Register = () => {
-  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
   const [userData, setUserData] = useState({
     userName: "",
     emailID: "",
@@ -24,7 +24,6 @@ const Register = () => {
 
   const handleUserName = (event) => {
     const { name, value } = event.target;
-    console.log("inside userName");
     setErrorUserData({ ...errorUserData, userName: validateUserName(value) });
   };
   const handleInputs = (event) => {
@@ -51,7 +50,16 @@ const Register = () => {
       userName: errorUSerName,
     });
     if (errorEmail === "" && errorPassword === "" && errorUSerName === "") {
-      localStorage.setItem("registered_user", JSON.stringify(userData));
+      const alreadyResgistered = JSON.parse(
+        localStorage.getItem("registered_user")
+      );
+      if (alreadyResgistered) {
+        const newData = [...alreadyResgistered, userData];
+        localStorage.setItem("registered_user", JSON.stringify(newData));
+      } else {
+        const newData = [userData];
+        localStorage.setItem("registered_user", JSON.stringify(newData));
+      }
       navigate("/");
       //localstorageCheck
     }

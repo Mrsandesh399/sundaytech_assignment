@@ -3,6 +3,7 @@ import "./loginStyles.css";
 import { validateEmail, validatePassword } from "../../Services/inputFunctions";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+
 const Login = () => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
@@ -38,10 +39,16 @@ const Login = () => {
     });
     if (errorEmail === "" && errorPassword === "") {
       const getUserData = JSON.parse(localStorage.getItem("registered_user"));
-      if (
-        getUserData.emailID === userData.emailID &&
-        getUserData.password === userData.password
-      ) {
+      let isExist = false;
+      getUserData.map((user) => {
+        if (
+          user.emailID === userData.emailID &&
+          user.password === userData.password
+        ) {
+          isExist = true;
+        }
+      });
+      if (isExist) {
         navigate("/userlist");
       } else {
         alert("User not found");
